@@ -37,7 +37,7 @@ module.exports = {
                                  }
                                  console.log(user);
                                  
-                       const accessToken = jwt.sign(user, "6-e0-jQF4FIlhjKOx1ckXVgO", {expiresIn: '24h'});
+                       const accessToken = jwt.sign(user, "veYWL4bUmy0IJQti9Bc2nA7A", {expiresIn: '24h'});
                       // console.log(accessToken);
                        
                        res.status(200).json({
@@ -53,7 +53,7 @@ module.exports = {
                           }
                          // console.log(user);
                           
-                        const accessToken = jwt.sign(user, "6-e0-jQF4FIlhjKOx1ckXVgO", {expiresIn: '24h'});
+                        const accessToken = jwt.sign(user, "veYWL4bUmy0IJQti9Bc2nA7A", {expiresIn: '24h'});
                        // console.log(accessToken);
                         res.status(200).json({
                             accessToken

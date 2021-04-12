@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const CLIENT_ID = "42740897671-m5anco0if9iveruco1hid942ikicsjre.apps.googleusercontent.com";
+const CLIENT_ID = "921106448940-c1efkb7d4nearudnt40q111vqbk8fpfh.apps.googleusercontent.com";
 
 function Login(props){
     const classes = useStyles();
