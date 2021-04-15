@@ -114,6 +114,7 @@ export default function LangingPage() {
   let history = useHistory();
 
   function loginClick(){
+    //to redirect to login page
     history.push('/login')
   }
 
@@ -123,7 +124,7 @@ export default function LangingPage() {
       <div style={{display: 'flex', flexGrow: 1, textAlign: 'start'}}>
         <AppBar position="relative" style={{backgroundColor:"darkblue"}}>
           <Toolbar>
-            <ViewListIcon className={classes.icon} />
+            {/*<ViewListIcon className={classes.icon} />*/}
             <Typography variant="h6" color="inherit" noWrap className={classes.title}>
               Survey Forms
             </Typography>
@@ -150,12 +151,12 @@ export default function LangingPage() {
                     Survey Forms
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    Plan your next camping trip, manage event registrations, whip up a quick poll, create a pop quiz, and much more.
+                    An application of survey form with sentiment analysis.
                   </Typography>
                   <div className={classes.buttons}>
-                    <Button variant="contained" color="primary" className={classes.buttongg} onClick={loginClick}>
-                      Signup Now
-                    </Button>
+                    {/*<Button variant="contained" color="primary" className={classes.buttongg} onClick={loginClick}>*/}
+                    {/*  Signup Now*/}
+                    {/*</Button>*/}
                     <Button variant="contained" color="primary" className={classes.buttongg} onClick={loginClick}>
                       Login
                     </Button>

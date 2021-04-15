@@ -18,9 +18,9 @@ export default   {
         }
     },
 
-    getGuestUser(){
-        return {name: "Guest 123", userId: "guest123", email: "coolboy69@gg.com"}
-    },
+    // getGuestUser(){
+    //     return {name: "Guest 123", userId: "guest123", email: "coolboy69@gg.com"}
+    // },
 
     authenticate(cb) {
       this.isAuthenticated = true;
@@ -51,18 +51,18 @@ export default   {
         });
     },
 
-    loginAsGuest(){
-      var userData = {
-        name: "Cool Guest", 
-        id: "y2jsdqakq9rqyvtd4gf6g", 
-        email: "coolboy69@gg.com"
-      }
-
-      const accessToken = jwt.sign(userData, "thisisaguesttokenwithsomeshittystring8", {expiresIn: '24h'});
-      localStorage.setItem("userTicket", JSON.stringify(accessToken));   
-      return accessToken;   
-
-    },
+    // loginAsGuest(){
+    //   var userData = {
+    //     name: "Cool Guest",
+    //     id: "y2jsdqakq9rqyvtd4gf6g",
+    //     email: "coolboy69@gg.com"
+    //   }
+    //
+    //   const accessToken = jwt.sign(userData, "thisisaguesttokenwithsomeshittystring8", {expiresIn: '24h'});
+    //   localStorage.setItem("userTicket", JSON.stringify(accessToken));
+    //   return accessToken;
+    //
+    // },
 
     logout() {
       localStorage.removeItem("userTicket");

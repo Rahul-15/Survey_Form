@@ -12,7 +12,7 @@ import Menu from '@material-ui/core/Menu';
 
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import AddIcon from '@material-ui/icons/Add';
 import HomeIcon from '@material-ui/icons/Home';
@@ -229,14 +229,14 @@ function Dashboard() {
           <p>Create </p>
         </MenuItem>
 
-        <MenuItem>
+        <MenuItem onClick={logout}>
           <IconButton
             aria-label="account of current user"
             color="inherit"
           >
-            <AccountCircle />
+            <ExitToAppIcon />
           </IconButton>
-          <p>Profile</p>
+          <p>Logout</p>
         </MenuItem>
       </Menu>
     );
@@ -259,21 +259,21 @@ function Dashboard() {
           Survey Forms
         </Typography>
 
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
-          </div>
-          <InputBase
-            placeholder="Search…"
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput,
-            }}
-            inputProps={{ 'aria-label': 'search' }}
-          />
+        {/*<div className={classes.search}>*/}
+        {/*  <div className={classes.searchIcon}>*/}
+        {/*    <SearchIcon />*/}
+        {/*  </div>*/}
+        {/*  <InputBase*/}
+        {/*    placeholder="Search…"*/}
+        {/*    classes={{*/}
+        {/*      root: classes.inputRoot,*/}
+        {/*      input: classes.inputInput,*/}
+        {/*    }}*/}
+        {/*    inputProps={{ 'aria-label': 'search' }}*/}
+        {/*  />*/}
 
 
-        </div>
+        {/*</div>*/}
         <div className={classes.grow} />
         <div className={classes.sectionDesktop}>
           
@@ -287,7 +287,7 @@ function Dashboard() {
             color="inherit"
             onClick={logout}
           >
-            <AccountCircle />
+            <ExitToAppIcon />
           </IconButton>
         </div>
 

@@ -154,7 +154,7 @@ function EditForm(props) {
                     <IconButton
                         edge="start"
                         className={classes.menuButton}
-                        aria-label="Rohit Saini's form"
+                        aria-label="Survey form"
                         style={{color: '#140078'}}
                         
                     >
@@ -164,14 +164,14 @@ function EditForm(props) {
                         {formDeatils.name}
                     </Typography>
                     {/* <IconButton
-                        aria-label="Rohit Saini's form"
+                        aria-label="Survey form"
                         style={{marginLeft:'5px'}} 
                     >
                         <FolderOpenIcon />
                     </IconButton> */}
 
                     <IconButton
-                        aria-label="Rohit Saini's form" 
+                        aria-label="Survey form"
                     >
                         <StarBorderIcon />
                     </IconButton>
