@@ -19,6 +19,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import auth from '../../services/authService';
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
  
@@ -87,7 +88,38 @@ function UserView(props) {
      // setOptionValue(fakeData);
     //  
     };
+    const handleTextChange = (j, i) => {
+        var questionId = questions[i]._id
+        var optionId = questions[i].options[0]._id
 
+        var fakeData = {
+            question: i,
+            option: j
+        }
+        var data = {
+            questionId, optionId
+        }
+        //  console.log(data);
+        //console.log(fakeData);
+        // console.log(j);
+
+        setValue(j)
+        questions[i].options[0].optionText=value
+        var fakeRData = [...responseData];
+
+        var indexOfResponse = fakeRData.findIndex(x => x.questionId===questionId);
+        if(indexOfResponse === -1){
+            setResponseData(responseData=> [...responseData, data])
+
+        } else{
+            fakeRData[indexOfResponse].questionId = questionId
+            setResponseData(fakeRData);
+        }
+
+
+        // setOptionValue(fakeData);
+        //
+    };
     React.useEffect(() => {
         var formId = props.match.params.formId
         console.log(formId);
@@ -142,14 +174,12 @@ function UserView(props) {
       window.location.reload(true);
     }
 
+    let Answer;
     return (
         <div style={{minHeight: '100vh'}}>
          <div>
          <AppBar position="static" style={{backgroundColor: 'darkblue'}}>
             <Toolbar>
-              <IconButton edge="start" style={{marginRight: '10px', marginBottom: '5px'}} color="inherit" aria-label="menu">
-                <MenuIcon />
-              </IconButton>
               <Typography variant="h6" style={{}}>
                 Survey Forms
               </Typography>
@@ -201,7 +231,7 @@ function UserView(props) {
                                       <img src={ques.questionImage} width="80%" height="auto" /><br></br><br></br>
                                     </div>
                                 ): "" }
-                                
+                                {ques.options.length!==1?
                                   <div>
     
                                   <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={(e)=>{handleRadioChange(e.target.value, i)}}>
@@ -224,7 +254,24 @@ function UserView(props) {
                                       ))}  
                                     </RadioGroup>
     
-                                  </div>
+                                  </div>:ques.options.map((op, j)=>(
+
+                                      <div>
+                                      <TextField
+                                        fullWidth={true}
+                                        placeholder={op.optionText}
+                                        style={{marginBottom: '10px'}}
+                                        rows={1}
+                                        rowsMax={20}
+                                        multiline={true}
+                                        variant="outlined"
+                                        onChange={(e) => {
+                                            //handleTextChange(e.target.value, i)
+                                            Answer=e.target.value;
+                                        }}
+                                      />
+                                      <Button onClick={()=>handleTextChange(Answer, i)}>Save Answer</Button>
+                                      </div>))}
                             </div>
                           </div>  
                         </Paper>  

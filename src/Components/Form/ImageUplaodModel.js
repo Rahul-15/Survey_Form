@@ -64,8 +64,7 @@ function ImageUplaodModel(props){
               <DialogTitle id="form-dialog-title">Upload Image Here</DialogTitle>
                   <DialogContent>
                     <DialogContentText>
-                      Hey, Creating a Community is fun and easy, just fill these easy fields and get your personlized gang ready within seconds.
-                      for question 
+                      Input your image. image size should be less than 3MB.
                     </DialogContentText>
                     <TextField
                       type="file"

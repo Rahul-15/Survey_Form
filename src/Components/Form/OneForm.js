@@ -47,7 +47,7 @@ export default function OneForm(props) {
                             <CardMedia
                             className={classes.media}
                             image="https://static.makeuseof.com/wp-content/uploads/2019/06/AutoGradingQuizResults-GoogleForms.jpg"
-                            title="Contemplative Reptile"
+                            title={form.name}
                             />
                             <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">

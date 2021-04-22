@@ -78,7 +78,7 @@ function EditForm(props) {
   const [formID, setFormID] = React.useState("");
 
 
-  const [formDeatils, setFormDetails] = React.useState({});
+  const [formDetails, setFormDetails] = React.useState({});
   const [openOfAlert, setOpenOfAlert] = React.useState(false);
 
   React.useEffect(()=>{
@@ -86,7 +86,7 @@ function EditForm(props) {
 }, [])
 
   const clipToClipboard = ()=>{
-    navigator.clipboard.writeText(window.location.origin + "/s/" + formDeatils._id)
+    navigator.clipboard.writeText(window.location.origin + "/s/" + formDetails._id)
     handleClickOfAlert();
     handleClose();
   }
@@ -146,22 +146,22 @@ function EditForm(props) {
 
     return (
         <div>
-          { formDeatils.createdBy === user.id ? (
+          { formDetails.createdBy === user.id ? (
             <div>
             <div className={classes.root}>
                 <AppBar position="static" style={{backgroundColor: 'white'}} elevation={2}>
                     <Toolbar className={classes.toolbar}>
-                    <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        aria-label="Survey form"
-                        style={{color: '#140078'}}
-                        
-                    >
-                        <ViewListIcon />
-                    </IconButton>
+                    {/*<IconButton*/}
+                    {/*    edge="start"*/}
+                    {/*    className={classes.menuButton}*/}
+                    {/*    aria-label="Survey form"*/}
+                    {/*    style={{color: '#140078'}}*/}
+                    {/*    */}
+                    {/*>*/}
+                    {/*    <ViewListIcon />*/}
+                    {/*</IconButton>*/}
                     <Typography variant="h6" noWrap style={{marginTop: '8.5px', color:'black'}}>
-                        {formDeatils.name}
+                        {formDetails.name}
                     </Typography>
                     {/* <IconButton
                         aria-label="Survey form"
@@ -170,11 +170,11 @@ function EditForm(props) {
                         <FolderOpenIcon />
                     </IconButton> */}
 
-                    <IconButton
-                        aria-label="Survey form"
-                    >
-                        <StarBorderIcon />
-                    </IconButton>
+                    {/*<IconButton*/}
+                    {/*    aria-label="Survey form"*/}
+                    {/*>*/}
+                    {/*    <StarBorderIcon />*/}
+                    {/*</IconButton>*/}
                     
 
                     <Tabs
@@ -187,27 +187,28 @@ function EditForm(props) {
                 >
                     <Tab label="Questions" />
                     <Tab label="Responses" />
+                    <Tab label="Analysis"/>
                 </Tabs>
                     <IconButton aria-label="search" onClick={sendForm}>
-                        <SendIcon />
+                        Send<SendIcon />
                     </IconButton>
                 
-                    <IconButton aria-label="search">
-                        <PaletteIcon />
-                    </IconButton>
-                    <IconButton aria-label="search">
-                        <VisibilityIcon />
-                    </IconButton>
-                    <IconButton aria-label="search">
-                        <SettingsIcon />
-                    </IconButton>
+                    {/*<IconButton aria-label="search">*/}
+                    {/*    <PaletteIcon />*/}
+                    {/*</IconButton>*/}
+                    {/*<IconButton aria-label="search">*/}
+                    {/*    <VisibilityIcon />*/}
+                    {/*</IconButton>*/}
+                    {/*<IconButton aria-label="search">*/}
+                    {/*    <SettingsIcon />*/}
+                    {/*</IconButton>*/}
                     
-                    <IconButton aria-label="display more actions" edge="end">
-                        <MoreIcon />
-                    </IconButton>
-                    <IconButton aria-label="display more actions" edge="end">
-                        <AccountCircleIcon />
-                    </IconButton>
+                    {/*<IconButton aria-label="display more actions" edge="end">*/}
+                    {/*    <MoreIcon />*/}
+                    {/*</IconButton>*/}
+                    {/*<IconButton aria-label="display more actions" edge="end">*/}
+                    {/*    <AccountCircleIcon />*/}
+                    {/*</IconButton>*/}
                     </Toolbar>
                 </AppBar>
             </div>
@@ -224,7 +225,7 @@ function EditForm(props) {
               <Paper className={classes.paper}>
                   <Grid container alignContent="space-between" alignItems="center">
                       <Grid item>
-                          <Typography variant="body1">{window.location.origin + "/s/" + formDeatils._id}</Typography>
+                          <Typography variant="body1">{window.location.origin + "/s/" + formDetails._id}</Typography>
                           
                       </Grid>
                       <Grid item>
@@ -233,9 +234,9 @@ function EditForm(props) {
                   </Grid>
               </Paper>
                   {/* <div style={{padding: '7px', display: 'flex'}}>
-                  <Typography variant="body1">{window.location.origin + "/s/" + formDeatils._id}</Typography>
+                  <Typography variant="body1">{window.location.origin + "/s/" + formDetails._id}</Typography>
                     
-                  <IconButton onClick={() =>  navigator.clipboard.writeText(window.location.origin + "/s/" + formDeatils._id)}  >
+                  <IconButton onClick={() =>  navigator.clipboard.writeText(window.location.origin + "/s/" + formDetails._id)}  >
                     <MoreIcon />
                   </IconButton>
                   </div> */}
@@ -273,10 +274,10 @@ function EditForm(props) {
 
         <div>
             <TabPanel value={value} index={0}>
-                <QuestionsTab formData={formDeatils} />
+                <QuestionsTab formData={formDetails} />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <ResponseTab formData={formDeatils} formId={formID} />
+                <ResponseTab formData={formDetails} formId={formID} />
             </TabPanel>
         </div>
         </div>
@@ -291,7 +292,7 @@ export default EditForm;
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-  
+
     return (
       <div
         role="tabpanel"
