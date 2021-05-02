@@ -149,7 +149,9 @@ function UserView(props) {
            }
        );
         
-    },[props.match.params.formId]);
+    },
+    [props.match.params.formId]
+    );
 
     function submitResponse(){
       var submissionData = {

@@ -12,11 +12,6 @@ import Box from '@material-ui/core/Box';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import SettingsIcon from '@material-ui/icons/Settings';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import PaletteIcon from '@material-ui/icons/Palette';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import SendIcon from '@material-ui/icons/Send';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -28,11 +23,6 @@ import FilterNoneIcon from '@material-ui/icons/FilterNone';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-
-import ViewListIcon from '@material-ui/icons/ViewList';
-
 import QuestionsTab from './QuestionsTab';
 import ResponseTab from '../Response/ResponseTab';
 import formService from '../../services/formService';
@@ -141,7 +131,9 @@ function EditForm(props) {
              }
          );
         }
-    },[props.match.params.formId]);
+    },
+    [props.match.params.formId]
+    );
 
 
     return (

@@ -33,7 +33,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watch",
     "eject": "react-scripts eject",
     "client": "npm start",
     "server": "cd server && node index.js",
@@ -55,6 +55,11 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^5.2.0"
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^5.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "jest": "^26.6.3"
   }
 }
