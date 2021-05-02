@@ -41,6 +41,7 @@ function UserView(props) {
     
     const [questions, setQuestions] = React.useState([]);
     const [value, setValue] = React.useState('');
+     
     //console.log(value);
     React.useEffect(()=>{
       if(auth.isAuthenticated()){
@@ -59,13 +60,15 @@ function UserView(props) {
     const handleRadioChange = (j, i) => {
       var questionId = questions[i]._id
       var optionId = questions[i].options[j]._id
+      var optionTextvalue = "NONE"
 
       var fakeData = {
-        question: i,
-        option: j
+          question: i,
+          option: j,
+          Text: "NONE"
       }
       var data = {
-        questionId, optionId
+          questionId, optionId, optionTextvalue
       }
     //  console.log(data);
       //console.log(fakeData);
@@ -89,15 +92,19 @@ function UserView(props) {
     //  
     };
     const handleTextChange = (j, i) => {
+      
+        console.log("user response = "+j)
         var questionId = questions[i]._id
         var optionId = questions[i].options[0]._id
+        var optionTextvalue = j
 
         var fakeData = {
             question: i,
-            option: j
+            option: j,
+            Text: "no name"
         }
         var data = {
-            questionId, optionId
+            questionId, optionId, optionTextvalue
         }
         //  console.log(data);
         //console.log(fakeData);

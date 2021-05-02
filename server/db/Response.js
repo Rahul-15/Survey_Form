@@ -15,6 +15,7 @@ var ResponseSchema = new mongoose.Schema({
   response : [{
       questionId: String,
       optionId: String,
+      optionTextvalue: String,
   }],
   
  }, {timestamps: true});

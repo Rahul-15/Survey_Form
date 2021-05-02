@@ -67,23 +67,26 @@ function ResponseTab(props) {
 
 
     function getSelectedOption(qId, i, j){
-      var oneResData = responseData[j];
-      //console.log(oneResData);
-      
-      var selectedOp = oneResData.response.filter(qss => qss.questionId === qId);
-     console.log(selectedOp);
+        var oneResData = responseData[j];
+//console.log(oneResData);
 
-      if(selectedOp.length > 0){
+        var selectedOp = oneResData.response.filter(qss => qss.questionId === qId);
+        console.log(selectedOp);
 
-        var finalOption = questions[i].options.find(oo => oo._id === selectedOp[0].optionId);
-        return finalOption.optionText
-      } else{
-        return "not attempted"
-      }
+        if(selectedOp.length > 0){
 
-      
-      // return selectedOp[0].optionId;
-      //this.students.filter(stud => stud.Class==className);
+            var finalOption = questions[i].options.find(oo => oo._id === selectedOp[0].optionId);
+            var ans = ""
+            { questions[i].options.length!==1 ? ans = finalOption.optionText : ans = selectedOp[0].optionTextvalue}
+
+            return ans
+        } else{
+            return "not attempted"
+        }
+
+
+// return selectedOp[0].optionId;
+//this.students.filter(stud => stud.Class==className);
     }
 
     // function getOptionTextById(optionId, questionId, i){
