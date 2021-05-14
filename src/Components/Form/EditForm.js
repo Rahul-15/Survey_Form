@@ -25,6 +25,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import QuestionsTab from './QuestionsTab';
 import ResponseTab from '../Response/ResponseTab';
+import AnalysisTab from '../Response/AnalysisTab';
 import formService from '../../services/formService';
 import auth from '../../services/authService';
 
@@ -270,6 +271,9 @@ function EditForm(props) {
             </TabPanel>
             <TabPanel value={value} index={1}>
                 <ResponseTab formData={formDetails} formId={formID} />
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+                <AnalysisTab formData={formDetails} formId={formID} />
             </TabPanel>
         </div>
         </div>

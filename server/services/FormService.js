@@ -4,12 +4,29 @@ const ResponseModel = require('../db/Response')
 const jwt = require('jsonwebtoken');
 const jwtDecode = require('jwt-decode');
 
+var bunyan = require('bunyan');
+
+var log = bunyan.createLogger({
+    name: 'myapp',
+    streams: [
+      {
+        level: 'info',
+        path: 'myapp-error.log'            // log INFO and above to stdout
+      },
+      {
+        level: 'error',
+        path: 'myapp-error.log'  // log ERROR and above to a file
+      }
+    ]
+  });
+
 //create modules formsGet,createForm,getFormById,deleteForm,editForm, getAllFormsOfUser,submitResponse,allResponses,getResponses
 module.exports = {
     formsGet : async(req,res)=>{
         try{
             var result = await FormModel.find().lean();
             res.send(result);     
+            log.info({status: 'started'}, 'FormsGet - Getting Forms from DB');
         }catch(e){
             res.send(e);
         }
@@ -36,6 +53,8 @@ module.exports = {
                 );
             })
 
+            log.info({status: 'started'}, 'Creating Form');
+
         } catch (error) {
             res.send(error)
         }
@@ -53,6 +72,8 @@ module.exports = {
                      res.status(200).json(form)
                  }
              })
+
+             log.info({status: 'started'}, 'Getting Form by Id');
 
         } catch (error) {
             res.send(error)
@@ -166,7 +187,10 @@ module.exports = {
             } 
             else{
                 res.status(400).send("FIll atleast one field, MF!"); 
-            } 
+            }
+            
+            log.info({status: 'started'}, 'submitting form');
+            
         } catch (error) {
             res.send(error)
         }

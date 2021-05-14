@@ -11,8 +11,8 @@ import UserView from "./Components/Responding/UserView"
 configure({adapter: new Adapter()});
 
 it('rendering', ()=> {
-    //const wrapper = mount(<App />);
-    //expect(wrapper.find(App).state("error")).toEqual(null);
+    // const wrapper = mount(<App />);
+    // expect(wrapper.find(App).state("error")).toEqual(null);
     mount(<App />)
 })
 
@@ -25,8 +25,8 @@ it('rendering', ()=> {
 
 
 // it('rendering', ()=> {
-//     // const wrapper = mount(<EditForm />);
-//     // expect(wrapper.state("error")).toEqual(null);
+//     const wrapper = mount(<EditForm />);
+//     expect(wrapper.state("error")).toEqual(null);
 //     shallow(<EditForm />)
 // })
 
