@@ -2,11 +2,29 @@ const UserModel = require('../db/User')
 const jwt = require('jsonwebtoken');
 const jwtDecode = require('jwt-decode');
 
+var bunyan = require('bunyan');
+
+var log = bunyan.createLogger({
+    name: 'myapp',
+    streams: [
+      {
+        level: 'info',
+        path: 'myapp-error.log'            // log INFO and above to stdout
+      },
+      {
+        level: 'error',
+        path: 'myapp-error.log'  // log ERROR and above to a file
+      }
+    ]
+  });
+
+log.info({status: 'started'}, 'User Services started');
 
 module.exports = {
     loginGet : async(req,res)=>{
         try{
             var result = await UserModel.find().lean();
+            log.info({status: 'started'}, 'loginGet');
             res.send(result);     
         }catch(e){
             res.send(e);
@@ -18,7 +36,7 @@ module.exports = {
         try {
             var result = await UserModel.findOne({email:req.body.email}).lean()
                // console.log(result);
-                
+               log.info({status: 'started'}, 'Login');
                 if(!result){
                     var gData = {
                         name: req.body.name,

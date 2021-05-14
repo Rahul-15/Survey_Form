@@ -5,18 +5,18 @@ import {Grid} from '@material-ui/core';
 import { Paper, Typography } from '@material-ui/core';
 
 import formService from '../../services/formService';
-import CircularProgress from '@material-ui/core/CircularProgress';
+// import CircularProgress from '@material-ui/core/CircularProgress';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import IconButton from '@material-ui/core/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+// import Container from '@material-ui/core/Container';
 
 import auth from '../../services/authService';
 import TextField from "@material-ui/core/TextField";
@@ -28,14 +28,14 @@ const useStyles = makeStyles((theme) => ({
 
 
 function UserView(props) {
-  const classes = useStyles();
+  // const classes = useStyles();
 
     const [userId, setUserId] = React.useState("")
     const [formData, setFormData] = React.useState({});
     const [responseData, setResponseData] = React.useState([])
     //console.log(responseData);
     
-    const [optionValue, setOptionValue] = React.useState([])
+    // const [optionValue, setOptionValue] = React.useState([])
     const [isSubmitted, setIsSubmitted] = React.useState(false)
     
     
@@ -62,11 +62,11 @@ function UserView(props) {
       var optionId = questions[i].options[j]._id
       var optionTextvalue = "NONE"
 
-      var fakeData = {
-          question: i,
-          option: j,
-          Text: "NONE"
-      }
+      // var fakeData = {
+      //     question: i,
+      //     option: j,
+      //     Text: "NONE"
+      // }
       var data = {
           questionId, optionId, optionTextvalue
       }
@@ -98,11 +98,11 @@ function UserView(props) {
         var optionId = questions[i].options[0]._id
         var optionTextvalue = j
 
-        var fakeData = {
-            question: i,
-            option: j,
-            Text: "no name"
-        }
+        // var fakeData = {
+        //     question: i,
+        //     option: j,
+        //     Text: "no name"
+        // }
         var data = {
             questionId, optionId, optionTextvalue
         }
@@ -149,7 +149,9 @@ function UserView(props) {
            }
        );
         
-    },[props.match.params.formId]);
+    },
+    [props.match.params.formId]
+    );
 
     function submitResponse(){
       var submissionData = {
@@ -326,13 +328,13 @@ function UserView(props) {
 
 export default UserView;
 
-const FormControlLabelWrapper = props => {
-  const { radioButton, ...labelProps } = props;
-  return (
-    <FormControlLabel
-      control={<Radio />}
-      label={"Radio " + props.value + props.jIndex}
-      {...labelProps}
-    />
-  );
-};
+// const FormControlLabelWrapper = props => {
+//   const { radioButton, ...labelProps } = props;
+//   return (
+//     <FormControlLabel
+//       control={<Radio />}
+//       label={"Radio " + props.value + props.jIndex}
+//       {...labelProps}
+//     />
+//   );
+// };

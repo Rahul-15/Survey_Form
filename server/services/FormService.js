@@ -4,12 +4,31 @@ const ResponseModel = require('../db/Response')
 const jwt = require('jsonwebtoken');
 const jwtDecode = require('jwt-decode');
 
+var bunyan = require('bunyan');
+
+var log = bunyan.createLogger({
+    name: 'myapp',
+    streams: [
+      {
+        level: 'info',
+        path: 'myapp-error.log'            // log INFO and above to stdout
+      },
+      {
+        level: 'error',
+        path: 'myapp-error.log'  // log ERROR and above to a file
+      }
+    ]
+  });
+
+  log.info({status: 'started'}, 'Forms Services Started');
+
 //create modules formsGet,createForm,getFormById,deleteForm,editForm, getAllFormsOfUser,submitResponse,allResponses,getResponses
 module.exports = {
     formsGet : async(req,res)=>{
         try{
             var result = await FormModel.find().lean();
             res.send(result);     
+            log.info({status: 'started'}, 'FormsGet - Getting Forms from DB');
         }catch(e){
             res.send(e);
         }
@@ -36,6 +55,8 @@ module.exports = {
                 );
             })
 
+            log.info({status: 'started'}, 'Creating Form');
+
         } catch (error) {
             res.send(error)
         }
@@ -53,6 +74,8 @@ module.exports = {
                      res.status(200).json(form)
                  }
              })
+
+             log.info({status: 'started'}, 'Getting Form by Id');
 
         } catch (error) {
             res.send(error)
@@ -85,6 +108,8 @@ module.exports = {
                     }
                 }
             });
+
+            log.info({status: 'started'}, 'Deleting Form');
         } catch (error) {
             
         }
@@ -113,6 +138,8 @@ module.exports = {
                     res.status(200).json(result)
                 }
             });
+
+            log.info({status: 'started'}, 'editForm - Editing Forms');
            
         } catch (error) {
             res.send(error)
@@ -136,7 +163,7 @@ module.exports = {
 
              //   res.send(docs.createdForms)
             });
-
+            log.info({status: 'started'}, 'retrieveing all forms from the DB');
             
         } catch (error) {
             res.send(error)
@@ -166,7 +193,10 @@ module.exports = {
             } 
             else{
                 res.status(400).send("FIll atleast one field, MF!"); 
-            } 
+            }
+            
+            log.info({status: 'started'}, 'submitting form');
+            
         } catch (error) {
             res.send(error)
         }
@@ -179,6 +209,8 @@ module.exports = {
         }catch(e){
             res.send(e);
         }
+
+        log.info({status: 'started'}, 'getting all responses');
     },
 
     getResponse: async(req, res)=>{
@@ -189,6 +221,8 @@ module.exports = {
             await ResponseModel.find({formId: formId}).then(async(responses)=>{ 
                     res.status(200).json(responses)
             })
+
+            log.info({status: 'started'}, 'getting all responses of a form');
 
         } catch (error) {
             res.send(error)

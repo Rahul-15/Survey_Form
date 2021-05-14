@@ -1,21 +1,21 @@
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import { GoogleLogin, GoogleLogout } from 'react-google-login/dist/google-login';
 import authService from '../services/authService';
 import { useHistory } from "react-router-dom";
 import React from 'react';
 
 
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
+// import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ViewListIcon from '@material-ui/icons/ViewList';
 
-import GoogleButton from 'react-google-button'
-import Avatar from "@material-ui/core/Avatar";
+import GoogleButton from 'react-google-button/dist/react-google-button'
+// import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -69,10 +69,10 @@ function Login(props){
           );
     }
 
-    const loginAsGuest = ()=>{
-        authService.loginAsGuest()
-        history.push(from.pathname);
-    }
+    // const loginAsGuest = ()=>{
+    //     authService.loginAsGuest()
+    //     history.push(from.pathname);
+    // }
 
     const handleLoginFailure = (response)=>{
         console.log('Failed to log in');

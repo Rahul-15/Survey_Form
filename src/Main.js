@@ -7,12 +7,12 @@ import {
   useLocation
 } from 'react-router-dom'
 import Home from './Components/Home'
-import auth from './services/authService'
+// import auth from './services/authService'
 import EditForm from './Components/Form/EditForm'
 import Login from './Components/Login'
 import PrivateRoute from './Components/util/PrivateRoute'
 import UserView from './Components/Responding/UserView'
-import RadioCheck from './Components/Responding/RadioCheck'
+// import RadioCheck from './Components/Responding/RadioCheck'
 
 function Main() {
   return (
