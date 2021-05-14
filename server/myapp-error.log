@@ -18,3 +18,13 @@
 {"name":"myapp","hostname":"rahul","pid":29383,"level":30,"status":"started","msg":"getting all responses of a form","time":"2021-05-14T05:42:14.278Z","v":0}
 {"name":"myapp","hostname":"rahul","pid":29383,"level":30,"status":"started","msg":"Login","time":"2021-05-14T05:42:42.037Z","v":0}
 {"name":"myapp","hostname":"rahul","pid":29383,"level":30,"status":"started","msg":"retrieveing all forms from the DB","time":"2021-05-14T05:42:42.203Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":228324,"level":30,"status":"started","msg":"User Services started","time":"2021-05-14T07:50:44.777Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":228324,"level":30,"status":"started","msg":"Forms Services Started","time":"2021-05-14T07:50:44.866Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":229781,"level":30,"status":"started","msg":"User Services started","time":"2021-05-14T08:05:05.627Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":229781,"level":30,"status":"started","msg":"Forms Services Started","time":"2021-05-14T08:05:05.686Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":229781,"level":30,"status":"started","msg":"Login","time":"2021-05-14T08:06:09.654Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":229781,"level":30,"status":"started","msg":"retrieveing all forms from the DB","time":"2021-05-14T08:06:09.817Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":229781,"level":30,"status":"started","msg":"Getting Form by Id","time":"2021-05-14T08:06:12.047Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":229781,"level":30,"status":"started","msg":"getting all responses of a form","time":"2021-05-14T08:06:17.703Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":229781,"level":30,"status":"started","msg":"getting all responses of a form","time":"2021-05-14T08:06:23.703Z","v":0}
+{"name":"myapp","hostname":"Lenovo-IdeaPad-S540","pid":229781,"level":30,"status":"started","msg":"getting all responses of a form","time":"2021-05-14T08:06:25.433Z","v":0}
