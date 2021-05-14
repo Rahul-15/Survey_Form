@@ -20,6 +20,8 @@ var log = bunyan.createLogger({
     ]
   });
 
+  log.info({status: 'started'}, 'Forms Services Started');
+
 //create modules formsGet,createForm,getFormById,deleteForm,editForm, getAllFormsOfUser,submitResponse,allResponses,getResponses
 module.exports = {
     formsGet : async(req,res)=>{
@@ -106,6 +108,8 @@ module.exports = {
                     }
                 }
             });
+
+            log.info({status: 'started'}, 'Deleting Form');
         } catch (error) {
             
         }
@@ -134,6 +138,8 @@ module.exports = {
                     res.status(200).json(result)
                 }
             });
+
+            log.info({status: 'started'}, 'editForm - Editing Forms');
            
         } catch (error) {
             res.send(error)
@@ -157,7 +163,7 @@ module.exports = {
 
              //   res.send(docs.createdForms)
             });
-
+            log.info({status: 'started'}, 'retrieveing all forms from the DB');
             
         } catch (error) {
             res.send(error)
@@ -203,6 +209,8 @@ module.exports = {
         }catch(e){
             res.send(e);
         }
+
+        log.info({status: 'started'}, 'getting all responses');
     },
 
     getResponse: async(req, res)=>{
@@ -213,6 +221,8 @@ module.exports = {
             await ResponseModel.find({formId: formId}).then(async(responses)=>{ 
                     res.status(200).json(responses)
             })
+
+            log.info({status: 'started'}, 'getting all responses of a form');
 
         } catch (error) {
             res.send(error)
